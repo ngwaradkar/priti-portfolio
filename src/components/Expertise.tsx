@@ -82,7 +82,7 @@ export default function Expertise() {
       </Reveal>
 
       <div className="grid gap-12 md:grid-cols-12 md:gap-6">
-        <div role="tablist" aria-label="Skill categories" aria-orientation="vertical" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 md:col-span-5 md:mx-0 md:block md:overflow-visible md:px-0 md:pb-0">
+        <div role="tablist" aria-label="Skill categories" aria-orientation="vertical" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 md:col-span-5 md:mx-0 md:block md:overflow-visible md:px-0 md:pb-0 [mask-image:linear-gradient(to_right,black_85%,transparent_100%)] md:[mask-image:none]">
           {skillCategories.map((c) => {
             const on = c.id === active;
             return (

@@ -307,7 +307,8 @@ export default function TechOrbit({ rings: groups }: { rings: string[][] }) {
     <div
       ref={stage}
       tabIndex={0}
-      role="img"
+      role="region"
+      aria-roledescription="interactive 3D orbit"
       aria-label={`Priti at the centre of three orbits of her skills: ${groups.flat().join(', ')}. Scroll, drag or use the arrow keys to set the orbits spinning.`}
       data-cursor="pull"
       data-cursor-label="Spin"

@@ -210,6 +210,7 @@ export default function PullCord() {
       window.clearInterval(nudge);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
+      delete document.documentElement.dataset.cordDragging;
     };
   }, []);
 
@@ -362,7 +363,7 @@ export default function PullCord() {
         type="button"
         role="switch"
         aria-checked={theme === 'light'}
-        aria-label={`Light switch. Pull the cord to switch to ${next} mode.`}
+        aria-label={`Theme switcher: currently ${theme} mode. Pull cord to switch to ${next} mode.`}
         title={`Pull for ${next} mode`}
         data-cursor="pull"
         {...grab}

@@ -29,7 +29,7 @@ export default function Experience() {
             <span aria-hidden="true" className="absolute top-1 bottom-1 left-[5px] w-px bg-line" />
             <motion.span aria-hidden="true" style={{ scaleY: reduce ? 1 : scaleY }} className="absolute top-1 bottom-1 left-[5px] w-px origin-top bg-fg" />
             {timeline.map((t, i) => (
-              <Reveal as="li" key={t.title} delay={i * 0.06} className={`relative pl-8 ${i > 0 ? 'mt-10' : ''}`}>
+              <Reveal as="li" key={`${t.org}-${t.period}`} delay={i * 0.06} className={`relative pl-8 ${i > 0 ? 'mt-10' : ''}`}>
                 <span aria-hidden="true" className="absolute top-1.5 left-0 h-[11px] w-[11px] rounded-full border border-fg bg-bg" />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                   <h4 className="text-[clamp(1.2rem,1.7vw,1.5rem)] leading-tight font-medium tracking-[-0.03em]">{t.title}</h4>

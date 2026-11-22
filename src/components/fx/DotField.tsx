@@ -63,7 +63,16 @@ export default function DotField() {
       }
     };
 
+    let lastDraw = 0;
+    const IDLE_INTERVAL = 1000 / 30; // throttle to ~30 FPS when mouse is idle
+
     const loop = (t: number) => {
+      // When mouse is idle, throttle to 30 FPS to save CPU
+      if (!mouse.active && t - lastDraw < IDLE_INTERVAL) {
+        raf = visible && !reduced ? requestAnimationFrame(loop) : 0;
+        return;
+      }
+      lastDraw = t;
       draw(t);
       raf = visible && !reduced ? requestAnimationFrame(loop) : 0;
     };
